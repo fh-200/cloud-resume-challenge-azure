@@ -1,0 +1,176 @@
+/* ====== Base / Theme ====== */
+:root {
+  --accent: #2563eb; /* blue accent (tweak if you like) */
+  --text: #111;
+  --muted: #555;
+  --line: #e5e7eb;
+  --bg: #fff;
+  --max: 820px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 14px/1.55 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: #f8fafc;
+}
+
+/* ====== Layout ====== */
+main {
+  max-width: var(--max);
+  margin: 32px auto;
+  background: var(--bg);
+  padding: 32px 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+}
+
+/* Hide the site nav for resume; optional */
+nav {
+  display: none;
+}
+
+/* ====== Header ====== */
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+}
+.header-meta {
+  text-align: right;
+  color: var(--muted);
+  font-size: 13px;
+}
+.header-meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.header-meta a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Section ====== */
+section {
+  margin-top: 26px;
+}
+section h2 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #000;
+  position: relative;
+  padding-bottom: 6px;
+}
+section h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 52px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ====== Two-column meta rows (title/company vs location/date) ====== */
+.item {
+  margin: 14px 0 10px;
+}
+.item-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: baseline;
+}
+.item-title {
+  font-weight: 700;
+}
+.item-sub {
+  color: var(--muted);
+  font-weight: 500;
+}
+.item-meta {
+  text-align: right;
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 12.5px;
+}
+
+/* Bullets */
+ul.clean {
+  list-style: none;
+  padding-left: 0;
+  margin: 6px 0 0;
+}
+ul.clean li {
+  position: relative;
+  padding-left: 18px;
+  margin: 6px 0;
+}
+ul.clean li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ====== Skills “pill” style ====== */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+.pill {
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  background: #fff;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Print ====== */
+@media print {
+  body {
+    background: #fff;
+  }
+  main {
+    box-shadow: none;
+    border: 0;
+    margin: 0;
+    padding: 12mm 14mm;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  .header-meta a {
+    color: #000;
+  }
+}

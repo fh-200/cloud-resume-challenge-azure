@@ -16,6 +16,6 @@ This project is my implementation of the [Cloud Resume Challenge](https://cloudr
 ## Status
 
 - [x] Frontend deployed
-- [ ] Visitor counter
+- [x] Visitor counter
 - [ ] Infrastructure as code
 - [ ] CI/CD automation
